@@ -1,10 +1,24 @@
 package com.sk.product.domain;
 
+import lombok.RequiredArgsConstructor;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Required;
 
 public class ProductServiceTest {
 
-    private ProductService productService = new ProductService();
+    private ProductService productService;
+
+    @BeforeEach
+    void init() {
+        ProductPersistencePort productPersistencePort = new ProductPersistencePort() {
+            @Override
+            public Product save(Product product) {
+                return product;
+            }
+        };
+        productService = new ProductService(productPersistencePort);
+    }
 
     @Test
     void registerProduct() {
@@ -13,13 +27,23 @@ public class ProductServiceTest {
         productService.register(product);
     }
 
-    private class Product {
+    @RequiredArgsConstructor
+    private class ProductService {
+        private final ProductPersistencePort productPersistencePort;
+
+        public void register(Product product) {
+            productPersistencePort.save(product);
+        }
+
+
     }
 
-    private class ProductService {
-        public void register(Product request) {
-            throw new UnsupportedOperationException("not implement");
-        }
+    private class Product {
+
+    }
+
+    private interface ProductPersistencePort {
+        Product save(Product product);
     }
 }
 

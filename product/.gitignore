@@ -1,4 +1,4 @@
-target/
+git remote add origin https://github.com/190726/ecommerce-springboot.gittarget/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
