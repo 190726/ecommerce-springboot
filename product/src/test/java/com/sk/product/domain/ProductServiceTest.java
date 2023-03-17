@@ -2,10 +2,8 @@ package com.sk.product.domain;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Required;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,16 +23,16 @@ public class ProductServiceTest {
     @Test
     void registerProduct() {
         Product product = new Product();
-        productService.register(product);
+        final var register = productService.register(product);
+        assertThat(register.getId()).isEqualTo(1L);
     }
 
     @RequiredArgsConstructor
     private class ProductService {
         private final ProductPersistencePort productPersistencePort;
 
-        public void register(Product product) {
-            final var saved = productPersistencePort.save(product);
-            assertThat(saved.getId()).isEqualTo(1L);
+        public Product register(Product product) {
+            return productPersistencePort.save(product);
         }
     }
 
