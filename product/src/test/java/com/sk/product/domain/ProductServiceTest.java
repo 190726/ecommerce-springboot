@@ -4,6 +4,9 @@ import com.sk.product.adapter.out.InMemoryPersistenceAdapter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
+import static com.sk.product.domain.ProductStub.productStub;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductServiceTest {
@@ -18,9 +21,8 @@ public class ProductServiceTest {
 
     @Test
     void registerProduct() {
-        Product product = new Product();
+        Product product = productStub();
         final var register = productService.register(product);
         assertThat(register.getId()).isEqualTo(1L);
     }
-
 }
