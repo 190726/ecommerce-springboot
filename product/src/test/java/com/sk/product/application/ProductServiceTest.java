@@ -1,10 +1,11 @@
-package com.sk.product.domain;
+package com.sk.product.application;
 
 import com.sk.product.adapter.out.InMemoryPersistenceAdapter;
+import com.sk.product.application.ProductService;
+import com.sk.product.application.port.out.ProductPersistencePort;
+import com.sk.product.domain.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.math.BigDecimal;
 
 import static com.sk.product.domain.ProductStub.productStub;
 import static org.assertj.core.api.Assertions.assertThat;
