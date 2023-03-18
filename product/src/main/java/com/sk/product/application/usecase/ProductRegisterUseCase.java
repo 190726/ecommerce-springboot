@@ -1,4 +1,4 @@
-package com.sk.product.application.port.in;
+package com.sk.product.application.usecase;
 
 import com.sk.product.domain.Product;
 

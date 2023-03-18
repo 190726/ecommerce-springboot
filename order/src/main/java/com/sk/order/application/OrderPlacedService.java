@@ -1,6 +1,10 @@
-package com.sk.order.domain;
+package com.sk.order.application;
 
-public class OrderPlacedService {
+import com.sk.order.application.port.out.OrderPersistencePort;
+import com.sk.order.application.usecase.OrderPlacedUseCase;
+import com.sk.order.domain.Order;
+
+public class OrderPlacedService implements OrderPlacedUseCase {
 
     private final OrderPersistencePort orderPersistencePort;
 
@@ -8,6 +12,7 @@ public class OrderPlacedService {
         this.orderPersistencePort = orderPersistencePort;
     }
 
+    @Override
     public Order placed(Order order) {
         return orderPersistencePort.placed(order);
     };

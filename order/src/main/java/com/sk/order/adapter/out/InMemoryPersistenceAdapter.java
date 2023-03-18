@@ -1,4 +1,7 @@
-package com.sk.order.domain;
+package com.sk.order.adapter.out;
+
+import com.sk.order.domain.Order;
+import com.sk.order.application.port.out.OrderPersistencePort;
 
 import java.util.HashMap;
 import java.util.Map;

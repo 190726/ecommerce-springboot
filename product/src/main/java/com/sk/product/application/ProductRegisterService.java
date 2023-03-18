@@ -1,6 +1,6 @@
 package com.sk.product.application;
 
-import com.sk.product.application.port.in.ProductRegisterUseCase;
+import com.sk.product.application.usecase.ProductRegisterUseCase;
 import com.sk.product.domain.Product;
 import com.sk.product.application.port.out.ProductRegisterPort;
 import lombok.RequiredArgsConstructor;
