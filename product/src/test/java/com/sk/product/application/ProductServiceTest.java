@@ -1,8 +1,7 @@
 package com.sk.product.application;
 
 import com.sk.product.adapter.out.InMemoryPersistenceAdapter;
-import com.sk.product.application.ProductService;
-import com.sk.product.application.port.out.ProductPersistencePort;
+import com.sk.product.application.port.out.ProductRegisterPort;
 import com.sk.product.domain.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,12 +11,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductServiceTest {
 
-    private ProductService productService;
+    private ProductRegisterService productService;
 
     @BeforeEach
     void init() {
-        ProductPersistencePort productPersistencePort = new InMemoryPersistenceAdapter();
-        productService = new ProductService(productPersistencePort);
+        ProductRegisterPort productPersistencePort = new InMemoryPersistenceAdapter();
+        productService = new ProductRegisterService(productPersistencePort);
     }
 
     @Test

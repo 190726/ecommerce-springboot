@@ -6,15 +6,18 @@ import java.math.BigDecimal;
 
 @Data
 @Setter(AccessLevel.PRIVATE)
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class Product {
 
     private long id;
     private String name;
     private BigDecimal price;
     private long amount;
+
+    public Product(String name, BigDecimal price, long amount) {
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
+    }
 
     public void id(long id) {
         this.id = id;

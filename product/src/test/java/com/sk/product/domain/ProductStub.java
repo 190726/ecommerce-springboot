@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class ProductStub {
 
-    static Product productStub() {
-        return Product.builder().name("상품1").price(BigDecimal.ONE).amount(10L).build();
+    public static Product productStub() {
+        return new Product("상품1", BigDecimal.ONE, 10L);
     }
 }

@@ -11,9 +11,9 @@
     </parent>
     <packaging>jar</packaging>
     <groupId>com.sk</groupId>
-    <artifactId>product</artifactId>
+    <artifactId>order</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>product</name>
+    <name>order</name>
 
     <properties>
         <java.version>17</java.version>
@@ -87,10 +87,6 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
