@@ -1,7 +1,14 @@
 package com.sk.delivery.domain;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class DeliveryController {
+    private final DeliveryUseCase deliveryUseCase;
     public String delivery(DeliveryRequestDto request) {
-        throw new UnsupportedOperationException("not implement");
+        Invoice invoice = new Invoice();
+        deliveryUseCase.dispatch(invoice);
+        return "success";
+
     }
 }
