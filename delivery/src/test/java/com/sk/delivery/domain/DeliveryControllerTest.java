@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class DeliveryControllerTest {
 
-    private DeliveryController deliveryController = new DeliveryController(iv->{});
+    private DeliveryController deliveryController = new DeliveryController(iv->iv);
 
     @Test
     @DisplayName("배달테스트")

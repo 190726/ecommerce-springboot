@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 public class DeliveryController {
     private final DeliveryUseCase deliveryUseCase;
     public String delivery(DeliveryRequestDto request) {
-        Invoice invoice = new Invoice();
+        Invoice invoice = new Invoice("송장");
         deliveryUseCase.dispatch(invoice);
         return "success";
 
