@@ -1,13 +1,14 @@
-package com.sk.delivery.domain;
+package com.sk.delivery.adapter.out;
 
+import com.sk.delivery.application.port.DeliveryPersistencePort;
+import com.sk.delivery.domain.Invoice;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class DeliveryPersistenceTest {
 
-    private DeliveryPersistencePort deliveryPersistencePort = new DeliveryPersistenceAdapter();
-
+    private DeliveryPersistencePort deliveryPersistencePort = new DeliveryInMemoryPersistenceAdapter();
 
     @Test
     @DisplayName("배달 DB 연결")

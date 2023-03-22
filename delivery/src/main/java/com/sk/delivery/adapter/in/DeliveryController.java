@@ -1,5 +1,7 @@
-package com.sk.delivery.domain;
+package com.sk.delivery.adapter.in;
 
+import com.sk.delivery.application.usecase.DeliveryUseCase;
+import com.sk.delivery.domain.Invoice;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -9,6 +11,8 @@ public class DeliveryController {
         Invoice invoice = new Invoice("송장");
         deliveryUseCase.dispatch(invoice);
         return "success";
+    }
+    static class DeliveryRequestDto{
 
     }
 }

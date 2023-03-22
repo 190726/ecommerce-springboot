@@ -1,5 +1,7 @@
 package com.sk.delivery.domain;
 
+import com.sk.delivery.application.DeliveryService;
+import com.sk.delivery.application.usecase.DeliveryUseCase;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

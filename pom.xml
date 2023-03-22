@@ -12,6 +12,7 @@
         <module>product</module>
         <module>order</module>
         <module>delivery</module>
+        <module>application</module>
     </modules>
 
     <properties>
