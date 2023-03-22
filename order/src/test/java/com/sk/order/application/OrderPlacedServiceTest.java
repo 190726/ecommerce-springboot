@@ -1,8 +1,9 @@
-package com.sk.order.domain;
+package com.sk.order.application;
 
 import com.sk.order.adapter.out.InMemoryPersistenceAdapter;
 import com.sk.order.application.port.out.OrderPersistencePort;
 import com.sk.order.application.OrderPlacedService;
+import com.sk.order.domain.Order;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

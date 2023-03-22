@@ -4,7 +4,7 @@ import com.sk.order.application.port.out.OrderPersistencePort;
 import com.sk.order.application.usecase.OrderPlacedUseCase;
 import com.sk.order.domain.Order;
 
-public class OrderPlacedService implements OrderPlacedUseCase {
+class OrderPlacedService implements OrderPlacedUseCase {
 
     private final OrderPersistencePort orderPersistencePort;
 

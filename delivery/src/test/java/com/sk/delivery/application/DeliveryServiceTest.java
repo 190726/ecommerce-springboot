@@ -1,7 +1,8 @@
-package com.sk.delivery.domain;
+package com.sk.delivery.application;
 
 import com.sk.delivery.application.DeliveryService;
 import com.sk.delivery.application.usecase.DeliveryUseCase;
+import com.sk.delivery.domain.Invoice;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -6,7 +6,7 @@ import com.sk.delivery.domain.Invoice;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class DeliveryService implements DeliveryUseCase {
+class DeliveryService implements DeliveryUseCase {
 
     private final DeliveryPersistencePort persistencePort;
 
