@@ -1,8 +1,10 @@
 package com.sk.product.application;
 
 import com.sk.product.domain.Product;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+@Component
 public class ProductValidator {
 
     public Product validate(Product product) {

@@ -2,6 +2,8 @@ package com.sk.product.application;
 
 import com.sk.product.adapter.out.InMemoryPersistenceAdapter;
 import com.sk.product.application.port.out.ProductRegisterPort;
+import com.sk.product.application.usecase.ProductFetchQuery;
+import com.sk.product.application.usecase.ProductRegisterUseCase;
 import com.sk.product.domain.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,19 +18,20 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ProductServiceTest {
 
-    private ProductRegisterService productService;
+    private ProductRegisterUseCase registerUseCase;
     private ProductValidator validator = new ProductValidator();
+    private ProductFetchQuery productFetchQuery = new ProductFetchService();
 
     @BeforeEach
     void init() {
         ProductRegisterPort productPersistencePort = new InMemoryPersistenceAdapter();
-        productService = new ProductRegisterService(productPersistencePort, validator);
+        registerUseCase = new ProductRegisterService(productPersistencePort, validator);
     }
 
     @Test
-    void registerAndFindProduct() {
+    void registerProduct() {
         Product product = productStub();
-        final var register = productService.register(product);
+        final var register = registerUseCase.register(product);
         assertThat(register.getId()).isEqualTo(1L);
     }
 
@@ -36,9 +39,21 @@ public class ProductServiceTest {
     @DisplayName("상품 유효성 체크")
     void validateProduct() {
         // given
-        Product product = new Product("", BigDecimal.ONE, 5L);
+        Product product = new Product("상품", BigDecimal.ONE, 0);
         // when
-        Assertions.assertThrows(IllegalArgumentException.class, ()->productService.register(product));
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> registerUseCase.register(product));
+        // then
+    }
+
+    @Test
+    @DisplayName("상품조회하기")
+    void findByIdProductTest() {
+        // given
+        Product product = productStub();
+        final var register = registerUseCase.register(product);
+        // when
+        final var find = productFetchQuery.findBy(1L);
+        assertThat(find.getId()).isEqualTo(1L);
         // then
     }
 }
