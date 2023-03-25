@@ -20,12 +20,13 @@ public class ProductServiceTest {
 
     private ProductRegisterUseCase registerUseCase;
     private ProductValidator validator = new ProductValidator();
-    private ProductFetchQuery productFetchQuery = new ProductFetchService();
+    private ProductFetchQuery productFetchQuery;
 
     @BeforeEach
     void init() {
-        ProductRegisterPort productPersistencePort = new InMemoryPersistenceAdapter();
-        registerUseCase = new ProductRegisterService(productPersistencePort, validator);
+        InMemoryPersistenceAdapter persistenceAdapter = new InMemoryPersistenceAdapter();
+        registerUseCase = new ProductRegisterService(persistenceAdapter, validator);
+        productFetchQuery = new ProductFetchService(persistenceAdapter);
     }
 
     @Test
