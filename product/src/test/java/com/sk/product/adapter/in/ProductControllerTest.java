@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class ProductControllerTest {
 
 
-    private ProductRegisterController productController = new ProductRegisterController();
+    private ProductRegisterController productController = new ProductRegisterController(product -> product);
 
     @Test
     @DisplayName("ProductControllerTest")

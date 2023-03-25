@@ -1,15 +1,20 @@
 package com.sk.product.adapter.in;
 
+import com.sk.product.application.usecase.ProductRegisterUseCase;
+import com.sk.product.domain.Product;
+import lombok.RequiredArgsConstructor;
+
 import java.math.BigDecimal;
 
+@RequiredArgsConstructor
 public class ProductRegisterController {
 
+    private final ProductRegisterUseCase productRegisterUseCase;
+
     public void register(ProductRegisterRequest request) {
-        throw new UnsupportedOperationException("not implement");
+        productRegisterUseCase.register(new Product(request.name(), request.price(), request.amount()));
     }
 
-    static class ProductRegisterRequest {
-        public ProductRegisterRequest(String 상품명, BigDecimal one, long l) {
-        }
+    static record ProductRegisterRequest(String name, BigDecimal price, long amount) {
     }
 }
