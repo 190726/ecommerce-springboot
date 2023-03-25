@@ -1,4 +1,4 @@
-package com.sk.product.application;
+package com.sk.product.application.port.out;
 
 import com.sk.product.domain.Product;
 

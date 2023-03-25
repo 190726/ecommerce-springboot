@@ -1,6 +1,6 @@
 package com.sk.product.adapter.out;
 
-import com.sk.product.application.ProductFetchPort;
+import com.sk.product.application.port.out.ProductFetchPort;
 import com.sk.product.domain.Product;
 import com.sk.product.application.port.out.ProductRegisterPort;
 
