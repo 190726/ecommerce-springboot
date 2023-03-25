@@ -4,7 +4,9 @@ import com.sk.product.application.port.out.ProductFetchPort;
 import com.sk.product.application.usecase.ProductFetchQuery;
 import com.sk.product.domain.Product;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 class ProductFetchService implements ProductFetchQuery {
 
