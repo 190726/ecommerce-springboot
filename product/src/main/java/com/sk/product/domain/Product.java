@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+@ToString
 @Data
 @Setter(AccessLevel.PRIVATE)
 public class Product {
