@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 @Component
-public class ProductValidator {
+class ProductValidator {
 
     public Product validate(Product product) {
 
