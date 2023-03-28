@@ -23,7 +23,6 @@ class ProductRegisterController {
 
     @PostMapping("/product")
     public ResponseEntity<Void> register(@RequestBody @Valid ProductRegisterRequest request) {
-
         productRegisterUseCase.register(new Product(request.name(), request.price(), request.amount()));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

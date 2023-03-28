@@ -1,7 +1,7 @@
 package com.sk.product.adapter.out;
 
 import com.sk.product.application.port.out.ProductFetchPort;
-import com.sk.product.application.port.out.ProductNotExistException;
+import com.sk.product.application.ProductNotExistException;
 import com.sk.product.application.port.out.ProductRegisterPort;
 import com.sk.product.domain.Product;
 import lombok.RequiredArgsConstructor;
