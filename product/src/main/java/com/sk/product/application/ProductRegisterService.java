@@ -9,11 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 class ProductRegisterService implements ProductRegisterUseCase {
+
     private final ProductRegisterPort productPersistencePort;
-    private final ProductValidator validator;
 
     public Product register(Product product) {
-
-        return productPersistencePort.save(validator.validate(product));
+        return productPersistencePort.save(product);
     }
 }

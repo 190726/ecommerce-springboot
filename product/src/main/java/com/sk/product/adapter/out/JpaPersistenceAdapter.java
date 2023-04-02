@@ -3,13 +3,14 @@ package com.sk.product.adapter.out;
 import com.sk.product.application.port.out.ProductFetchPort;
 import com.sk.product.application.ProductNotExistException;
 import com.sk.product.application.port.out.ProductRegisterPort;
+import com.sk.product.application.port.out.ProductUpdatePort;
 import com.sk.product.domain.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
 @RequiredArgsConstructor
-public class JpaPersistenceAdapter implements ProductRegisterPort, ProductFetchPort {
+public class JpaPersistenceAdapter implements ProductRegisterPort, ProductFetchPort, ProductUpdatePort {
 
     private final ProductJpaRepository productJpaRepository;
     private final ProductMapper productMapper;
@@ -25,6 +26,13 @@ public class JpaPersistenceAdapter implements ProductRegisterPort, ProductFetchP
     public Product save(Product product) {
         return productMapper.apply(
             productJpaRepository.save(productEntityMapper.apply(product))
+        );
+    }
+
+    @Override
+    public Product update(Product product) {
+        return productMapper.apply(
+                productJpaRepository.save(productEntityMapper.apply(product))
         );
     }
 }

@@ -24,4 +24,11 @@ public class ProductEntity {
         this.price = price;
         this.amount = amount;
     }
+
+    public ProductEntity(long id, String name, BigDecimal price, long amount) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
+    }
 }

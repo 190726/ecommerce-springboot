@@ -9,6 +9,9 @@ import java.util.function.Function;
 public class ProductEntityMapper implements Function<Product, ProductEntity> {
     @Override
     public ProductEntity apply(Product product) {
+        if(product.getId() > 0L){
+            return new ProductEntity(product.getId(), product.getName(), product.getPrice(), product.getAmount());
+        }
         return new ProductEntity(product.getName(), product.getPrice(), product.getAmount());
     }
 }

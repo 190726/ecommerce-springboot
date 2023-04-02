@@ -5,6 +5,7 @@ import com.sk.product.domain.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ class ProductRegisterController {
 
     @PostMapping("/product")
     public ResponseEntity<Void> register(@RequestBody @Valid ProductRegisterRequest request) {
+
         productRegisterUseCase.register(new Product(request.name(), request.price(), request.amount()));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

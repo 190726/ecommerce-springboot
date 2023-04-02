@@ -1,16 +1,22 @@
 package com.sk.product.application;
 
+import com.sk.product.application.port.out.ProductFetchPort;
 import com.sk.product.domain.Product;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+@RequiredArgsConstructor
 @Component
 class ProductValidator {
 
-    public Product validate(Product product) {
+    private final ProductFetchPort productFetchPort;
+    private long MAX_AMOUNT = 100L;
 
-        Assert.hasText(product.getName(), "상품명은 필수 입니다.");
-        Assert.isTrue(product.getAmount() > 0L, "수량은 0보다 커야 합니다.");
+    public Product validate(Product product) {
+        final var findProduct = productFetchPort.findBy(product.getId());
+        final var sum = findProduct.getAmount() + product.getAmount();
+        if(sum < MAX_AMOUNT) throw new ProductExceedAmountException("Maximum amount exceed over " + MAX_AMOUNT);
         return product;
     }
 }
