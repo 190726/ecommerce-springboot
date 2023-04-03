@@ -2,8 +2,8 @@ package com.sk.order.application;
 
 import com.sk.order.adapter.out.InMemoryPersistenceAdapter;
 import com.sk.order.application.port.out.OrderPersistencePort;
-import com.sk.order.application.OrderPlacedService;
 import com.sk.order.domain.Order;
+import com.sk.order.domain.OrderItem;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,6 +23,17 @@ public class OrderPlacedServiceTest {
         // when
         final var placed = orderService.placed(order);
         Assertions.assertThat(placed.id()).isEqualTo(1L);
+        // then
+    }
+    
+    @Test
+    @DisplayName("")
+    void addOrderItemTest() {
+        // given
+        Order order = new Order();
+        // when
+        OrderItem item1;
+        //order.addItem(item1);
         // then
     }
 }

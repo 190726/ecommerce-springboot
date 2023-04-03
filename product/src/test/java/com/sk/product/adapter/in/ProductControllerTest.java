@@ -1,6 +1,5 @@
 package com.sk.product.adapter.in;
 
-import com.sk.product.adapter.in.ProductUpdateController.ProductRegisterRequest;
 import com.sk.product.application.port.out.ProductRegisterPort;
 import com.sk.product.domain.ProductStub;
 import io.restassured.RestAssured;
@@ -37,7 +36,7 @@ public class ProductControllerTest {
     @DisplayName("상품등록 api 호출 테스트")
     void productRegisterTest() {
         // given
-        ProductRegisterRequest request = new ProductRegisterRequest("상품명", BigDecimal.ONE, 10L);
+        ProductUpdateController.ProductUpdateRequest request = new ProductUpdateController.ProductUpdateRequest("상품명", BigDecimal.ONE, 10L);
         // when
         final var response = RestAssured.given().log().all()
                 .body(request)
