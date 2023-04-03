@@ -16,7 +16,9 @@ class ProductValidator {
     public Product validate(Product product) {
         final var findProduct = productFetchPort.findBy(product.getId());
         final var sum = findProduct.getAmount() + product.getAmount();
-        if(sum < MAX_AMOUNT) throw new ProductExceedAmountException("Maximum amount exceed over " + MAX_AMOUNT);
+        product.amout(sum);
+
+        if(sum > MAX_AMOUNT) throw new ProductExceedAmountException("Maximum amount exceed over " + MAX_AMOUNT);
         return product;
     }
 }

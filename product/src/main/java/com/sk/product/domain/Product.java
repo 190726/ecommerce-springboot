@@ -30,4 +30,8 @@ public class Product {
     public void id(long id) {
         this.id = id;
     }
+
+    public void amout(long sum) {
+        this.amount = amount;
+    }
 }

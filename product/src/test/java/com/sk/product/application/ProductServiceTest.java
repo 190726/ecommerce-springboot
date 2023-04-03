@@ -19,13 +19,12 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class ProductServiceTest {
 
     private ProductRegisterUseCase registerUseCase;
-    private ProductValidator validator = new ProductValidator();
     private ProductFetchQuery productFetchQuery;
 
     @BeforeEach
     void init() {
         InMemoryPersistenceAdapter persistenceAdapter = new InMemoryPersistenceAdapter();
-        registerUseCase = new ProductRegisterService(persistenceAdapter, validator);
+        registerUseCase = new ProductRegisterService(persistenceAdapter);
         productFetchQuery = new ProductFetchService(persistenceAdapter);
     }
 
