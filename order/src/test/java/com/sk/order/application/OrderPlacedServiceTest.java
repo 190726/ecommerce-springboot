@@ -8,6 +8,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 public class OrderPlacedServiceTest {
 
     private OrderPersistencePort orderPersistencePort = new InMemoryPersistenceAdapter(){
@@ -27,13 +29,17 @@ public class OrderPlacedServiceTest {
     }
     
     @Test
-    @DisplayName("")
+    @DisplayName("주문 아이템 생성후 카트에 담기")
     void addOrderItemTest() {
         // given
         Order order = new Order();
         // when
-        OrderItem item1;
-        //order.addItem(item1);
+        OrderItem item1 = new OrderItem(1L, "상품명1", BigDecimal.ONE);
+        order.addItem(item1);
+        OrderItem item2 = new OrderItem(2L, "상품명2", BigDecimal.TEN);
+        order.addItem(item2);
         // then
+        final var total = order.total();
+        Assertions.assertThat(total).isEqualTo(new BigDecimal(11.0));
     }
 }

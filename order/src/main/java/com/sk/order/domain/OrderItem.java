@@ -16,7 +16,7 @@ public class OrderItem {
     private BigDecimal price;
     private long quantity;
 
-    public OrderItem(Long id, Long productId, String productName, BigDecimal price, long quantity) {
+    public OrderItem(Long id, Long productId, String productName, BigDecimal price, Long quantity) {
         this.id = id;
         this.productId = productId;
         this.productName = productName;
@@ -24,7 +24,7 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public OrderItem(Long productId, String productName, BigDecimal price, long quantity) {
-        this(0L, productId, productName, price, quantity);
+    public OrderItem(Long productId, String productName, BigDecimal price) {
+        this(0L, productId, productName, price, 1L);
     }
 }
