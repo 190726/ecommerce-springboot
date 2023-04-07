@@ -1,12 +1,12 @@
 package com.sk.order.adapter.out;
 
 import com.sk.order.domain.Order;
-import com.sk.order.application.port.out.OrderPersistencePort;
+import com.sk.order.application.port.out.OrderPlacedPort;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class InMemoryPersistenceAdapter implements OrderPersistencePort {
+public class InMemoryPersistenceAdapter implements OrderPlacedPort {
     Map<Long, Order> persistenceMap = new HashMap<>();
     private static Long sequence = 0L;
 

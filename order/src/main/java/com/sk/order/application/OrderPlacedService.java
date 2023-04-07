@@ -1,14 +1,14 @@
 package com.sk.order.application;
 
-import com.sk.order.application.port.out.OrderPersistencePort;
+import com.sk.order.application.port.out.OrderPlacedPort;
 import com.sk.order.application.usecase.OrderPlacedUseCase;
 import com.sk.order.domain.Order;
 
 class OrderPlacedService implements OrderPlacedUseCase {
 
-    private final OrderPersistencePort orderPersistencePort;
+    private final OrderPlacedPort orderPersistencePort;
 
-    public OrderPlacedService(OrderPersistencePort orderPersistencePort) {
+    public OrderPlacedService(OrderPlacedPort orderPersistencePort) {
         this.orderPersistencePort = orderPersistencePort;
     }
 

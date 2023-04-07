@@ -8,6 +8,11 @@ public class Order {
 
     private Long id;
     private OrderCart cart;
+    private OrderStatus orderStatus;
+
+    public Order(){
+        orderStatus = OrderStatus.Placed;
+    }
 
     public void id(Long id) {
         this.id = id;

@@ -1,7 +1,7 @@
 package com.sk.order.application;
 
 import com.sk.order.adapter.out.InMemoryPersistenceAdapter;
-import com.sk.order.application.port.out.OrderPersistencePort;
+import com.sk.order.application.port.out.OrderPlacedPort;
 import com.sk.order.domain.Order;
 import com.sk.order.domain.OrderItem;
 import org.assertj.core.api.Assertions;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 public class OrderPlacedServiceTest {
 
-    private OrderPersistencePort orderPersistencePort = new InMemoryPersistenceAdapter(){
+    private OrderPlacedPort orderPersistencePort = new InMemoryPersistenceAdapter(){
 
     };
     private OrderPlacedService orderService = new OrderPlacedService(orderPersistencePort);
