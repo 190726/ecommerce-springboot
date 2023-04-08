@@ -29,4 +29,10 @@ public class OrderEntity {
             joinColumns = @JoinColumn(name = "ORDER_ITEM_ID", referencedColumnName = "id"))
     private List<OrderItemEntity> orderItems;
 
+    public OrderEntity(OrderStatus orderStatus, BigDecimal totalPrice, List<OrderItemEntity> orderItems){
+        this.orderStatus = orderStatus;
+        this.totalPrice = totalPrice;
+        this.orderItems =orderItems;
+    }
+
 }

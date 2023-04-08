@@ -19,6 +19,14 @@ public class OrderCart {
         total = total.add(item.getPrice());
     }
 
+    public void addAll(List<OrderItem> items){
+        items.forEach(item -> add(item));
+    }
+
+    public List<OrderItem> orderItems(){
+        return this.items;
+    }
+
     public BigDecimal total(){
         return total;
     }

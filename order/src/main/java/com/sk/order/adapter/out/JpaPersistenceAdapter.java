@@ -13,6 +13,6 @@ public class JpaPersistenceAdapter implements OrderPlacedPort {
 
     @Override
     public Order placed(Order order) {
-        return null;
+        throw new UnsupportedOperationException("not implement");
     }
 }

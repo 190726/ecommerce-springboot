@@ -10,14 +10,12 @@ import java.math.BigDecimal;
 @Setter(AccessLevel.PRIVATE)
 public class OrderItem {
 
-    private Long id;
     private Long productId;
     private String productName;
     private BigDecimal price;
     private long quantity;
 
-    public OrderItem(Long id, Long productId, String productName, BigDecimal price, Long quantity) {
-        this.id = id;
+    public OrderItem(Long productId, String productName, BigDecimal price, Long quantity) {
         this.productId = productId;
         this.productName = productName;
         this.price = price;
@@ -25,6 +23,6 @@ public class OrderItem {
     }
 
     public OrderItem(Long productId, String productName, BigDecimal price) {
-        this(0L, productId, productName, price, 1L);
+        this(productId, productName, price, 1L);
     }
 }
