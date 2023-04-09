@@ -9,10 +9,13 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class JpaPersistenceAdapter implements OrderPlacedPort {
 
+    private final OrderEntityMapper orderEntityMapper;
+    private final OrderMapper orderMapper;
     private final OrderJpaRepository orderJpaRepository;
 
     @Override
     public Order placed(Order order) {
-        throw new UnsupportedOperationException("not implement");
+        final var save = orderJpaRepository.save(orderEntityMapper.apply(order));
+        return orderMapper.apply(save);
     }
 }
