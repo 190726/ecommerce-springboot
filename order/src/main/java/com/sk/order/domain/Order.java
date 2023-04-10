@@ -18,7 +18,7 @@ public class Order {
     public Order(Long id, OrderStatus orderStatus, OrderCart orderCart){
         this.id = id;
         this.orderStatus = orderStatus;
-        this.cart = cart;
+        this.cart = orderCart;
     }
 
     public void id(Long id) {

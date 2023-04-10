@@ -3,7 +3,9 @@ package com.sk.order.application;
 import com.sk.order.application.port.out.OrderPlacedPort;
 import com.sk.order.application.usecase.OrderPlacedUseCase;
 import com.sk.order.domain.Order;
+import org.springframework.stereotype.Service;
 
+@Service
 class OrderPlacedService implements OrderPlacedUseCase {
 
     private final OrderPlacedPort orderPersistencePort;
