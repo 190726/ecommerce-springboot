@@ -2,6 +2,7 @@ package com.sk.order.application;
 
 import com.sk.order.adapter.out.InMemoryPersistenceAdapter;
 import com.sk.order.application.port.out.OrderPlacedPort;
+import com.sk.order.application.usecase.OrderDeliveryUseCase;
 import com.sk.order.domain.Order;
 import com.sk.order.domain.OrderItem;
 import org.assertj.core.api.Assertions;
@@ -15,6 +16,7 @@ public class OrderPlacedServiceTest {
     private OrderPlacedPort orderPersistencePort = new InMemoryPersistenceAdapter(){
 
     };
+
     private OrderPlacedService orderService = new OrderPlacedService(orderPersistencePort);
 
     @Test

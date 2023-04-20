@@ -1,24 +1,19 @@
 package com.sk.order.application;
 
 import com.sk.order.application.port.out.OrderDeliveryPort;
-import com.sk.order.application.port.out.OrderDerliveryPort;
 import com.sk.order.application.usecase.OrderDeliveryUseCase;
+import com.sk.order.domain.Order;
 
-public class OrderDeliveriedService implements OrderDeliveryUseCase {
+public class OrderDeliveryService implements OrderDeliveryUseCase {
 
     private final OrderDeliveryPort orderDeliveryPort;
 
-    public OrderDeliveriedService(OrderDeliveryPort orderDeliveryPort) {
+    public OrderDeliveryService(OrderDeliveryPort orderDeliveryPort) {
         this.orderDeliveryPort = orderDeliveryPort;
     }
 
     @Override
     public void delivery(Order order) {
-        orderDerliveryPort.dispatch(order);
-    }
-
-    @Override
-    public void delivery() {
-
+        orderDeliveryPort.dispatch(order);
     }
 }
