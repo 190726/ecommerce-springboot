@@ -29,6 +29,7 @@ public class ProductServiceTest {
     }
 
     @Test
+    @DisplayName("상품등록")
     void registerProduct() {
         Product product = productStub();
         final var register = registerUseCase.register(product);
@@ -42,7 +43,6 @@ public class ProductServiceTest {
         Product product = new Product("상품", BigDecimal.ONE, 0);
         // when
         Assertions.assertThrows(IllegalArgumentException.class, ()-> registerUseCase.register(product));
-        // then
     }
 
     @Test

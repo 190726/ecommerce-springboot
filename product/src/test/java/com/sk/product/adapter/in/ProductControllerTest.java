@@ -31,7 +31,6 @@ public class ProductControllerTest {
         RestAssured.port = port;
     }
 
-
     @Test
     @DisplayName("상품등록 api 호출 테스트")
     void productRegisterTest() {
